@@ -9,50 +9,50 @@ import java.util.*;
 public class DemoInfoDAO {
     public static Map<String, DemoInfo> map = Collections.synchronizedMap(new HashMap<String, DemoInfo>());
 
-    static{
-        for (int i = 0;i<10;i++){
+    static {
+        for (int i = 0; i < 10; i++) {
             DemoInfo demoInfo = new DemoInfo();
             demoInfo.setId(++i + "");
             demoInfo.setName("mine_" + i);
-            demoInfo.setDescription("我是第"+i+"个同学！");
+            demoInfo.setDescription("我是第" + i + "个同学！");
             map.put(i + "", demoInfo);
         }
     }
 
-    public List<DemoInfo> insertDemoInfo(DemoInfo demo){
+    public List<DemoInfo> insertDemoInfo(DemoInfo demo) {
         map.put(demo.getId(), demo);
         List<DemoInfo> list = getListDemoInfo(map);
         return list;
     }
 
-    public List<DemoInfo> getListDemoInfo(Map<String, DemoInfo> map){
+    public List<DemoInfo> getListDemoInfo(Map<String, DemoInfo> map) {
         Set<String> set = map.keySet();
         List<DemoInfo> list = new ArrayList<>();
-        for (String key : set){
+        for (String key : set) {
             DemoInfo demoInfo = map.get(key);
             list.add(demoInfo);
         }
         return list;
     }
 
-    public List<DemoInfo> deleteDemoInfo(DemoInfo demoInfo){
+    public List<DemoInfo> deleteDemoInfo(DemoInfo demoInfo) {
         map.remove(demoInfo.getId());
         List<DemoInfo> list = getListDemoInfo(map);
         return list;
     }
 
-    public List<DemoInfo> updateDemoInfo(DemoInfo demoInfo){
+    public List<DemoInfo> updateDemoInfo(DemoInfo demoInfo) {
         map.replace(demoInfo.getId(), demoInfo);
         List<DemoInfo> list = getListDemoInfo(map);
         return list;
     }
 
-    public DemoInfo findDemoInfo(String id){
+    public DemoInfo findDemoInfo(String id) {
         DemoInfo demoInfo = map.get(id);
         return demoInfo;
     }
 
-    public List<DemoInfo> findAll(){
+    public List<DemoInfo> findAll() {
         return getListDemoInfo(map);
     }
 }

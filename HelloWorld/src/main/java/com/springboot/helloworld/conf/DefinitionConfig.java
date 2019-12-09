@@ -34,7 +34,7 @@ public class DefinitionConfig implements Serializable {
     private Integer random2;
 
     @Override
-    public String toString(){
+    public String toString() {
         return "DefinitionConfig [name=" + name + ", title=" + title + ", desc=" + desc + ", value=" + value + ", number=" + number + ", bignumber=" + bignumber + ", random1=" + random1 + ", random2=" + random2 + "]";
 
     }

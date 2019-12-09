@@ -14,7 +14,7 @@ public class HelloworldApplication {
         System.out.println("********");
         String[] beanNames = context.getBeanDefinitionNames();
         Arrays.sort(beanNames);
-        for (String name:beanNames){
+        for (String name : beanNames) {
             System.out.println(name);
         }
 

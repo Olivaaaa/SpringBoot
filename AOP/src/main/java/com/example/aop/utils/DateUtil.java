@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class DateUtil {
 
-    public static String now(){
+    public static String now() {
         Date date = new Date();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         String dateString = format.format(date);

@@ -15,7 +15,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     @timebuskerMethod
     public String addUserInfo(String name) throws IllegalArgumentException {
-        logger.info("新增的用户姓名是："+ name);
+        logger.info("新增的用户姓名是：" + name);
         return name + "U";
     }
 }

@@ -13,7 +13,7 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 
     @Override
     public String addOrderInfo(String name) {
-        logger.info("新增的订单："+name);
+        logger.info("新增的订单：" + name);
         return name + "O";
     }
 }

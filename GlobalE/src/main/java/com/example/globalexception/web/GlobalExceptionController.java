@@ -17,7 +17,7 @@ public class GlobalExceptionController {
     //捕捉自定义异常，返回json信息
     @ExceptionHandler(value = MineException.class)
     @ResponseBody
-    public ErrorMessage<Object> ErrorHandler(HttpServletRequest request, MineException e) throws Exception{
+    public ErrorMessage<Object> ErrorHandler(HttpServletRequest request, MineException e) throws Exception {
         ErrorMessage<Object> error = new ErrorMessage<>();
         error.setCode(404);
         error.setMessage("Not Found Exception");
@@ -28,7 +28,7 @@ public class GlobalExceptionController {
 
     @ExceptionHandler(value = ArithmeticException.class)
     @ResponseBody
-    public ErrorMessage<Object> ErrorHandler(HttpServletRequest request, ArithmeticException e) throws Exception{
+    public ErrorMessage<Object> ErrorHandler(HttpServletRequest request, ArithmeticException e) throws Exception {
         ErrorMessage<Object> error = new ErrorMessage<>();
         error.setCode(405);
         error.setMessage("方法不被允许");
@@ -39,7 +39,7 @@ public class GlobalExceptionController {
     }
 
     @ExceptionHandler(value = Exception.class)
-    public ModelAndView ErrorHandler(HttpServletRequest request, Exception e) throws Exception{
+    public ModelAndView ErrorHandler(HttpServletRequest request, Exception e) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         ErrorMessage<Exception> error = new ErrorMessage<>();
         error.setCode(400);

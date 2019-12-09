@@ -12,7 +12,7 @@ import java.security.Principal;
 public class UserController {
 
     @GetMapping("/user")
-    public String user(@AuthenticationPrincipal Principal principal, Model model){
+    public String user(@AuthenticationPrincipal Principal principal, Model model) {
         model.addAttribute("username", principal.getName());
         return "user/user";
     }

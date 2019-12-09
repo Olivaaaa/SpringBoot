@@ -12,7 +12,7 @@ public class Address implements Serializable {
 
     private static final long serialVersionUID = -8011043775142297278L;
 
-    public Address(String street, String city){
+    public Address(String street, String city) {
         super();
         this.street = street;
         this.city = city;
@@ -31,10 +31,12 @@ public class Address implements Serializable {
     @OneToOne
     @JoinColumn(name = "userId")
     private User user;
-    public Integer getAddressId(){
+
+    public Integer getAddressId() {
         return addressId;
     }
-    public void setAddressId(Integer addressId){
+
+    public void setAddressId(Integer addressId) {
         this.addressId = addressId;
     }
 

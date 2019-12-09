@@ -17,7 +17,7 @@ public class AuthoRoleController {
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/authRole")
-    public String role(){
+    public String role() {
         return "admin auth";
     }
 

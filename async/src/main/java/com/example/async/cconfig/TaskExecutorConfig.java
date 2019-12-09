@@ -36,11 +36,11 @@ public class TaskExecutorConfig implements AsyncConfigurer {
 
     //自定义执行器
     @Bean
-    public Executor getMineAsync(){
+    public Executor getMineAsync() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(CORE_POOL_SIZE-4);
-        executor.setMaxPoolSize(MAX_POOL_SIZE-10);
-        executor.setQueueCapacity(QUEUE_CAPACITY-5);
+        executor.setCorePoolSize(CORE_POOL_SIZE - 4);
+        executor.setMaxPoolSize(MAX_POOL_SIZE - 10);
+        executor.setQueueCapacity(QUEUE_CAPACITY - 5);
         executor.setThreadNamePrefix("mineAsync-");
         //当pool达到最大时，不在线程池中执行任务，而是由调用者所在的线程来执行
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());

@@ -18,11 +18,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsServiceImpl userDetailsServiceImpl;
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
                 //设置白名单
-                .antMatchers("/","/header.html").permitAll()
+                .antMatchers("/", "/header.html").permitAll()
                 .antMatchers("/user/**").hasRole("USER")
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/user")

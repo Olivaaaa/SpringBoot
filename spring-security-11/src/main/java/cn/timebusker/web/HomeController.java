@@ -16,17 +16,17 @@ public class HomeController {
     private UserService userService;
 
     @GetMapping({"/", "/index", "/home"})
-    public String root(){
+    public String root() {
         return "index";
     }
 
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "login";
     }
 
     @GetMapping("/register")
-    public String register(){
+    public String register() {
         return "register";
     }
 

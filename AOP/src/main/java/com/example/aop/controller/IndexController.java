@@ -26,7 +26,7 @@ public class IndexController {
     UserInfoService userInfoService;
 
     @RequestMapping(value = {"/**", "/"}, method = RequestMethod.GET)
-    public Long testAop(){
+    public Long testAop() {
         logger.info("\n=======SPRING AOP========\n");
         int i = 1;
         i = CommonUtil.add(i);
@@ -36,7 +36,7 @@ public class IndexController {
         String name = "######";
         name = orderSrvice.addOrderInfo(name);
         name = userInfoService.addUserInfo(name);
-        logger.info("名称是："+name);
+        logger.info("名称是：" + name);
         return System.currentTimeMillis();
 
     }

@@ -24,27 +24,27 @@ public class UserController {
 
     //使用id查询
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public User findOneUser(@PathVariable long id){
+    public User findOneUser(@PathVariable long id) {
         logger.info("请求路径的id：" + id);
         User user = service.findUserById(id);
         return user;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public List<User> findAllUser(){
+    public List<User> findAllUser() {
         logger.info("所有用户信息");
         return service.findAllUser();
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public User saveAndFlushUser(@ModelAttribute User user){
+    public User saveAndFlushUser(@ModelAttribute User user) {
         logger.info("传入的参数：" + JSON.toJSONString(user));
         service.saveAndFlush(user);
         return user;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public User deleteUser(@PathVariable long id){
+    public User deleteUser(@PathVariable long id) {
         User user = service.findUserById(id);
         service.deleteUserById(id);
         return user;

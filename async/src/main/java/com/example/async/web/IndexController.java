@@ -19,9 +19,9 @@ public class IndexController {
 
     @SuppressWarnings("static-access")
     @RequestMapping(value = {"/"}, method = RequestMethod.GET)
-    public void index(){
+    public void index() {
         long start = System.currentTimeMillis();
-        try{
+        try {
             logger.info("------\n");
             logger.info("每个任务执行的时间是：" + arithmeticService.DoTime + "（毫秒）");
 
@@ -30,8 +30,8 @@ public class IndexController {
 
             long sync = arithmeticService.SubBySync();
 
-            while(true){
-                if (task.isDone()){
+            while (true) {
+                if (task.isDone()) {
                     long async = task.get();
                     logger.info("异步时间" + async + "ms");
                     logger.info("同步时间" + sync + "ms");
@@ -48,9 +48,9 @@ public class IndexController {
     }
 
     @RequestMapping(value = {"/mine", "/m*"}, method = RequestMethod.GET)
-    public void mineAsync(){
-        for (int i = 0;i<100;i++){
-            try{
+    public void mineAsync() {
+        for (int i = 0; i < 100; i++) {
+            try {
                 arithmeticService.doMineAsync(i);
             } catch (Exception e) {
                 e.printStackTrace();

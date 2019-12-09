@@ -14,7 +14,7 @@ public class ArithmeticService {
     public static final int DoTime = 5000;
 
     @Async
-    public Future<Long> subByAsync() throws Exception{
+    public Future<Long> subByAsync() throws Exception {
         long start = System.currentTimeMillis();
         long sum = 0;
         Thread.sleep(DoTime);
@@ -27,7 +27,7 @@ public class ArithmeticService {
     }
 
     @Async
-    public void subByVoid() throws Exception{
+    public void subByVoid() throws Exception {
         long start = System.currentTimeMillis();
         long sum = 0;
         Thread.sleep(DoTime);
@@ -38,7 +38,7 @@ public class ArithmeticService {
         logger.info("注解完成的时间是" + sum + "(毫秒)");
     }
 
-    public long SubBySync() throws Exception{
+    public long SubBySync() throws Exception {
         long start = System.currentTimeMillis();
         long sum = 0;
         Thread.sleep(DoTime);
@@ -49,7 +49,7 @@ public class ArithmeticService {
     }
 
     @Async("getMineAsync")
-    public void doMineAsync(int i) throws Exception{
+    public void doMineAsync(int i) throws Exception {
         System.out.println("----\t:" + i);
         Thread.sleep(10000);
     }

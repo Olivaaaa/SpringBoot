@@ -1,6 +1,6 @@
 package com.example.globalexception.exception;
 
-public class MineException extends RuntimeException{
+public class MineException extends RuntimeException {
     private static final long serialVersion = -1104674993657790702L;
 
     //生成序列异常
@@ -12,7 +12,7 @@ public class MineException extends RuntimeException{
     //异常信息
     protected String msg;
 
-    public MineException(String message){
+    public MineException(String message) {
         super(message);
     }
 
@@ -22,15 +22,15 @@ public class MineException extends RuntimeException{
         this.msg = String.format(msgFormat, args);
     }
 
-    public MineException(String message, Throwable cause){
+    public MineException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public MineException(Throwable cause){
+    public MineException(Throwable cause) {
         super(cause);
     }
 
-    public MineException newInstance(String msgFormat, Object... args){
+    public MineException newInstance(String msgFormat, Object... args) {
         return new MineException(this.code, msgFormat, args);
     }
 

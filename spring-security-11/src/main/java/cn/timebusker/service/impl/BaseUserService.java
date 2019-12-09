@@ -19,10 +19,11 @@ public class BaseUserService implements UserService {
     public BaseUserService(UserMapper userMapper) {
         this.userMapper = userMapper;
     }
+
     @Override
     public boolean insert(UserEntity userEntity) {
         String username = userEntity.getUsername();
-        if (exist(username)){
+        if (exist(username)) {
             return false;
         }
         encryptPassword(userEntity);
@@ -47,8 +48,8 @@ public class BaseUserService implements UserService {
         return (userEntity != null);
     }
 
-//    加密密码
-    private void encryptPassword(UserEntity userEntity){
+    //    加密密码
+    private void encryptPassword(UserEntity userEntity) {
         String password = userEntity.getPassword();
         password = new BCryptPasswordEncoder().encode(password);
         userEntity.setPassword(password);

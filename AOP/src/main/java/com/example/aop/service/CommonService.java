@@ -12,8 +12,8 @@ public class CommonService {
 
     private final static Logger logger = LoggerFactory.getLogger(CommonUtil.class);
 
-    public int add(int i){
-        i = i+1;
+    public int add(int i) {
+        i = i + 1;
         logger.info("CommonService：" + i);
         return i;
     }

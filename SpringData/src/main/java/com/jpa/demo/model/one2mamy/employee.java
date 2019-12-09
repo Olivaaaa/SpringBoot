@@ -17,13 +17,13 @@ public class employee {
     @OneToOne(cascade = CascadeType.ALL, optional = false, mappedBy = "employee")
     private detailInfo detailInfo;
 
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="depId")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "depId")
     private department department;
 
-    @ManyToMany(cascade=CascadeType.ALL)
-    @JoinTable(name="t_em_pos", inverseJoinColumns =  @JoinColumn (name =  "em_id" ),
-            joinColumns =  @JoinColumn (name =  "pos_id" ))
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "t_em_pos", inverseJoinColumns = @JoinColumn(name = "em_id"),
+            joinColumns = @JoinColumn(name = "pos_id"))
 
 //	@JoinTable(name="em_pos",indexes={@Index(columnList = "em_id"),@Index(columnList = "pos_id")},
 //			inverseJoinColumns =  @JoinColumn (name =  "em_id" ),

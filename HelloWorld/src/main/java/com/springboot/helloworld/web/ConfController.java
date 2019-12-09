@@ -17,13 +17,13 @@ public class ConfController {
     DubboConfig dubbo;
 
     @RequestMapping("/conf")
-    public String getConfig(){
+    public String getConfig() {
         System.out.println(conf.toString());
         return conf.toString();
     }
 
     @RequestMapping("/dubbo")
-    public String dubboConfig(){
+    public String dubboConfig() {
         System.out.println(dubbo.toString());
         return dubbo.toString();
     }

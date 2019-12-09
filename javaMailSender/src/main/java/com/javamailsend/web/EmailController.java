@@ -22,7 +22,7 @@ public class EmailController {
     private JavaMailSender mailSender;
 
     @RequestMapping("/simple")
-    public void sendSimpleMail() throws Exception{
+    public void sendSimpleMail() throws Exception {
         logger.info("发送简单的文本邮件...");
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("2453273909@qq.com");
@@ -34,7 +34,7 @@ public class EmailController {
     }
 
     @RequestMapping("/attcments")
-    public void sendAttachmentsMail() throws Exception{
+    public void sendAttachmentsMail() throws Exception {
         logger.info("发送带有附件的邮件...");
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
@@ -49,7 +49,7 @@ public class EmailController {
     }
 
     @RequestMapping("/inline")
-    public void sendTemplateMail() throws Exception{
+    public void sendTemplateMail() throws Exception {
         logger.info("发送简单邮件模板的邮件..");
     }
 

@@ -19,7 +19,7 @@ public class position {
     @Column(nullable = false, length = 32)
     private String posName;
 
-    @ManyToMany(cascade=CascadeType.ALL,mappedBy="position")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "position")
     private List<employee> employee;
 
 //    @Id

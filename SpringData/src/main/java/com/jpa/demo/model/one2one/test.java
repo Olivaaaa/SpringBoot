@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "t_test")
 public class test implements Serializable {
-     private static final long serialVersionUID = 5260045025079981216L;
+    private static final long serialVersionUID = 5260045025079981216L;
 
     @Id
     private long teid;

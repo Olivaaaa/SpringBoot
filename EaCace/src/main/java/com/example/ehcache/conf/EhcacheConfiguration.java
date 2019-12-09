@@ -25,7 +25,7 @@ public class EhcacheConfiguration implements CachingConfigurer {
     }
 
     @Bean
-    public EhCacheManagerFactoryBean ehCacheManagerFactoryBean(){
+    public EhCacheManagerFactoryBean ehCacheManagerFactoryBean() {
         EhCacheManagerFactoryBean ehCacheManagerFactoryBean = new EhCacheManagerFactoryBean();
         ehCacheManagerFactoryBean.setConfigLocation(new ClassPathResource("ehcache.xml"));
 
@@ -37,14 +37,14 @@ public class EhcacheConfiguration implements CachingConfigurer {
     }
 
     @Bean
-    public KeyGenerator defaultKeyGenerator(){
+    public KeyGenerator defaultKeyGenerator() {
         return new KeyGenerator() {
             @Override
             public Object generate(Object o, Method method, Object... objects) {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append(o.getClass().getName());
                 stringBuilder.append(method.getName());
-                for (Object object:objects){
+                for (Object object : objects) {
                     stringBuilder.append(object.toString());
                 }
                 return stringBuilder.toString();

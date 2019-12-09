@@ -13,20 +13,20 @@ public class IndexController {
     private final static Logger logger = LoggerFactory.getLogger(IndexController.class);
 
     @RequestMapping("/")
-    public String hello(ModelMap map){
+    public String hello(ModelMap map) {
         logger.info("访问到了首页");
         map.addAttribute("index", "一起尝试spring boot 全局异常捕获吧");
-        return "index" ;
+        return "index";
     }
 
     @RequestMapping("/anyone")
-    public String anyone(ModelMap map) throws Exception{
+    public String anyone(ModelMap map) throws Exception {
         logger.info("访问个人");
         throw new Exception();
     }
 
     @RequestMapping("/mine")
-    public String mine(ModelMap map){
+    public String mine(ModelMap map) {
         logger.info("访问了到mine");
         Throwable throwable = new Throwable();
         throw new MineException("我们访问到了mine", throwable);
@@ -34,8 +34,8 @@ public class IndexController {
 
     @ResponseBody
     @RequestMapping("/sum")
-    public String sum(ModelMap map) throws ArithmeticException{
-        int i = 1/0;
+    public String sum(ModelMap map) throws ArithmeticException {
+        int i = 1 / 0;
         return "" + i;
     }
 

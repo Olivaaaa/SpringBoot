@@ -24,7 +24,8 @@ public class LoggerHandlerAop {
 
     //匹配service包下及包下任何方法执行
     @Pointcut(value = "execution(* com.example.aop.service.*.*(..))")
-    public void log1(){}
+    public void log1() {
+    }
 
     @Pointcut(value = "execution(* *..service.*.*(..))")
     public void log2() {
@@ -46,21 +47,24 @@ public class LoggerHandlerAop {
     }
 
     @Pointcut(value = "execution(* com.example.aop..add*(String))")
-    public void log6(){};
+    public void log6() {
+    }
+
+    ;
 
     @Pointcut(value = "@annotation(com.example.aop.annotation.timebuskerMethod)")
     public void logaa1() {
     }
 
     @Before("logaa1()")
-    public void beforeAdvice(JoinPoint point){
+    public void beforeAdvice(JoinPoint point) {
         logger.info("SSSSSSSSSSS");
-        logger.info("before"+DateUtil.now());
+        logger.info("before" + DateUtil.now());
         Signature signature = point.getSignature();
-        logger.info("所属类："+signature.getDeclaringTypeName()+"代理类:" + signature.getClass() + "方法："+signature.getName() + "类名："+signature.getDeclaringType());
+        logger.info("所属类：" + signature.getDeclaringTypeName() + "代理类:" + signature.getClass() + "方法：" + signature.getName() + "类名：" + signature.getDeclaringType());
         Object[] args = point.getArgs();
         logger.info("参数：" + JSON.toJSONString(args));
-        logger.info("被植入的对象是："+point.getTarget());
+        logger.info("被植入的对象是：" + point.getTarget());
         logger.info("EEEEEEE");
 
     }
@@ -94,8 +98,8 @@ public class LoggerHandlerAop {
      * 可以实现改变方法参数并执行方法
      */
     @Around(value = "logaa1()")
-    public Object aroundAdavice(ProceedingJoinPoint joinPoint){
-        logger.info("LoggerHandlerAop.aroundAdvice..."+DateUtil.now());
+    public Object aroundAdavice(ProceedingJoinPoint joinPoint) {
+        logger.info("LoggerHandlerAop.aroundAdvice..." + DateUtil.now());
         Object obj = null;
         try {
             Object[] args = joinPoint.getArgs();
@@ -108,11 +112,6 @@ public class LoggerHandlerAop {
         }
         return obj;
     }
-
-
-
-
-
 
 
 }
